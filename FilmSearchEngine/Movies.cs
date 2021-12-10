@@ -39,7 +39,8 @@ namespace FilmSearchEngine
                 Console.WriteLine(" Release date: {0}", release_date);
                 Console.WriteLine(" Rating: {0}", vote_average);
                 Console.WriteLine(" Overview: {0}", overview);
-            Console.WriteLine($"Poser Link: https://image.tmdb.org/t/p/w500{poster_path}");
+            Console.WriteLine($"Poster Link: https://image.tmdb.org/t/p/w500{poster_path}");
+            Console.ReadKey();
 
             }
 

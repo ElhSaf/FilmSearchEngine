@@ -8,30 +8,65 @@ namespace FilmSearchEngine
 {
     class Program
     {
-        public static  HttpClient client = new HttpClient();
-        static async Task  Main(string[] args)
+
+        static async Task Main(string[] args)
         {
-
-
-
-            DotNetEnv.Env.TraversePath().Load();
-            string key = Environment.GetEnvironmentVariable("ApiKey");
-            Console.WriteLine("enter Movie Id:");
-            int id = Convert.ToInt32(Console.ReadLine());
-
-            string MovieId = $"https://api.themoviedb.org/3/movie/{id}?api_key={key}";
-
-            var respons = await client.GetAsync(MovieId);
-            respons.EnsureSuccessStatusCode();
-
-            string responsContent = await respons.Content.ReadAsStringAsync();
-           
-
-            Movies test = JsonConvert.DeserializeObject<Movies>(responsContent);
-
-            test.DisplayMovie();
-
             
+            bool display = true;
+            while (display)
+            {
+                MainMenu.Menu();
+                
+                    int menuChoice = Convert.ToInt32(Console.ReadLine());
+
+
+                    switch (menuChoice)
+                    {
+                    case 1:
+                       
+                        while (true)
+                        {
+                           
+                            try
+                            {
+                                Console.Clear();
+                                await SearchEngine.Search().ConfigureAwait(false);
+                                
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("No Movie found. TRY AGAIN!");
+                                Console.ReadKey();
+
+                            }
+
+                            break;
+                        }
+
+                        break;
+                      
+
+
+
+
+
+
+                    default:
+
+                        display = false;
+                        break;
+
+                }
+
+
+
+            }
+            
+
+
+
+
+
 
 
         }
