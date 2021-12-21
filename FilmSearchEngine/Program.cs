@@ -11,27 +11,28 @@ namespace FilmSearchEngine
 
         static async Task Main(string[] args)
         {
-            
+
             bool display = true;
             while (display)
             {
+
+
                 MainMenu.Menu();
-                
-                    int menuChoice = Convert.ToInt32(Console.ReadLine());
+                int menuChoice = Convert.ToInt32(Console.ReadLine());
 
 
-                    switch (menuChoice)
-                    {
+                switch (menuChoice)
+                {
+                   
                     case 1:
-                       
-                        while (true)
-                        {
-                           
+
+                    
+
                             try
                             {
                                 Console.Clear();
                                 await SearchEngine.Search().ConfigureAwait(false);
-                                
+
                             }
                             catch (Exception)
                             {
@@ -39,19 +40,18 @@ namespace FilmSearchEngine
                                 Console.ReadKey();
 
                             }
-
-                            break;
-                        }
-
                         break;
-                      
+                            
+                        
 
 
 
+                       
+                    
 
 
 
-                    default:
+                          default:
 
                         display = false;
                         break;
@@ -61,7 +61,7 @@ namespace FilmSearchEngine
 
 
             }
-            
+
 
 
 

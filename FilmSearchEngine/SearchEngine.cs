@@ -27,6 +27,8 @@ namespace FilmSearchEngine
                 string responsContent = await respons.Content.ReadAsStringAsync();
                 respons.EnsureSuccessStatusCode();
 
+                
+
                 Movies test = JsonConvert.DeserializeObject<Movies>(responsContent);
 
                 test.DisplayMovie();
