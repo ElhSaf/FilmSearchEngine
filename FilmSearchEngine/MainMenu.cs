@@ -13,6 +13,7 @@ namespace FilmSearchEngine
             Console.Clear();
             Console.WriteLine("Welcome to Movie Search engine"); // dom olika valen som finns i menyn...
             Console.WriteLine("[1] Search movies ");
+           
             Console.WriteLine("[2] quite");
 
           
